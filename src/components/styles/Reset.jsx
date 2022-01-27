@@ -48,6 +48,10 @@ table {
 img {
   display: block;
 }
+button {
+	cursor: pointer;
+	outline: none;
+}
 `;
 
 export default reset;
