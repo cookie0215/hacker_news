@@ -1,29 +1,47 @@
-import { Global, css } from '@emotion/react'
+import { useContext } from 'react';
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled';
+import reset from './components/styles/Reset';
+import { Routes, Route } from 'react-router-dom';
+
+import { navis } from './routes';
+
 import Header from './components/Header';
 import Nav from './components/Nav';
-import Home from './components/Home';
-import Top from './components/Top';
-import reset from './components/styles/Reset';
+import ThemeContext from './context/ThemeContext';
+
 
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  background: pink;
+  min-height: 100vh;
+  background: ${({ theme }) => theme.bgColor};
   margin: 0 auto;
+  /* overflow: hidden; */
+  position: relative;
+`;
+
+const Main = styled.main`
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 78px;
+  /* border: 5px solid green; */
 `;
 
 function App() {
+  const [theme] = useContext(ThemeContext);
   return (
     <>
       <Global styles={reset} />
-      <Container>
+      <Container theme={theme}>
         <Header />
-        <main>
-          <Home />
-          <Top />
-        </main>
+        <Main>
+          <Routes>
+            {navis.map((navi) => (
+              <Route key={navi.name} path={navi.path} element={navi.element} />
+            ))}
+          </Routes>
+        </Main>
         <Nav />
       </Container>
     </>

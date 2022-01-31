@@ -1,6 +1,7 @@
 
 import { css } from '@emotion/react'
 
+
 const reset = css`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -23,7 +24,11 @@ time, mark, audio, video {
 }
 
 html { font-size: 1rem; }
-body { font-size: 100%; line-height: 1; }
+body { 
+	font-size: 100%; 
+	line-height: 1; 
+	font-family: 'Noto Sans KR', sans-serif;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
