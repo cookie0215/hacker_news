@@ -3,12 +3,14 @@ import ThemeContext from './ThemeContext';
 import { lightTheme, darkTheme } from '../theme/theme'
 
 const ThemeProvider = ({ children }) => {
-  const initState = localStorage.getItem('theme') || 'light';
+  const initState = localStorage.getItem('theme') || lightTheme;
   const [theme, setTheme] = useState(initState);
   const toggleTheme = () => {
     const newTheme = theme === lightTheme ? darkTheme : lightTheme;
     localStorage.setItem('theme', newTheme);
     setTheme(newTheme);
+
+    console.log(newTheme)
   }
 
   return (

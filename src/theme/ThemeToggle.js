@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
 import ThemeContext from '../context/ThemeContext';
+import { ReactComponent as DarkModBtn } from '../assets/darkmode.svg';
+import { darkTheme, lightTheme } from './theme';
 
 
 const ThemeToggleWrap = styled.span`
@@ -9,10 +11,9 @@ const ThemeToggleWrap = styled.span`
 
 const ThemeToggle = () => {
   const [theme, toggleTheme] = useContext(ThemeContext);
-  console.log(theme)
   return (
     <ThemeToggleWrap onClick={toggleTheme}>
-      <img src={require('../assets/darkmode.svg').default} alt="검색" />
+      <DarkModBtn />
     </ThemeToggleWrap >
   );
 };

@@ -20,13 +20,13 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html { font-size: 1rem; }
+html { font-size: 10px; }
 body { 
-	font-size: 100%; 
-	line-height: 1; 
+	font-size: 1rem; 
+	line-height: 1.4; 
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -49,6 +49,11 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+a:link,
+a { 
+	text-decoration: none;
+	color: #222;
 }
 img {
   display: block;

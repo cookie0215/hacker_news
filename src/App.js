@@ -1,16 +1,14 @@
 import { useContext } from 'react';
-import { Global } from '@emotion/react'
 import styled from '@emotion/styled';
-import reset from './components/styles/Reset';
 import { Routes, Route } from 'react-router-dom';
+import { Global } from '@emotion/react'
+import reset from './components/styles/Reset';
 
 import { navis } from './routes';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
 import ThemeContext from './context/ThemeContext';
-
-
 
 const Container = styled.div`
   width: 100%;
@@ -30,6 +28,7 @@ const Main = styled.main`
 
 function App() {
   const [theme] = useContext(ThemeContext);
+
   return (
     <>
       <Global styles={reset} />

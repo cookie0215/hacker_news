@@ -8,6 +8,7 @@ import ThemeContext from '../context/ThemeContext';
 const Container = styled.header`
   position: fixed;
   top: 0;
+  z-index: 10;
   width: 100%;
   border-bottom: 2px solid ${({ theme }) => theme.borderColor};
   background: ${({ theme }) => theme.bgColor};
