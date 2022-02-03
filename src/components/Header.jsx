@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from '../theme/ThemeToggle';
-import ThemeContext from '../context/ThemeContext';
 
 const Container = styled.header`
   position: fixed;
@@ -36,10 +36,10 @@ align-items: center;
 `;
 
 const Header = () => {
-  const [theme] = useContext(ThemeContext);
+  const [theme, toggleTheme] = useTheme();
   return (
     <>
-      <Container theme={theme}>
+      <Container>
         <Logo>
           <Link to='/'>
             <img src={require('../assets/logo.svg').default} alt='Hacker News' />
@@ -47,7 +47,7 @@ const Header = () => {
         </Logo>
         <GnbSep>
           <Search />
-          <ThemeToggle />
+          <ThemeToggle toggle={toggleTheme} mode={theme} />
         </GnbSep>
       </Container>
     </>

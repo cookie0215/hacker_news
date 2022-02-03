@@ -14,6 +14,7 @@ const ItemTop = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 5px;
+  color: ${({ theme }) => theme.fontColor};
 `;
 const Lank = styled.span`
   font-size: 3.5rem;
@@ -30,6 +31,9 @@ const Title = styled.span`
 `;
 const ArrowIcon = styled(Arrow)`
   flex-shrink: 0;
+  path {
+    stroke: ${({ theme }) => theme.fontColor};
+  }
 `;
 
 const ItemLink = styled.div`
@@ -39,7 +43,6 @@ const ItemLink = styled.div`
 const ArticleLink = styled.a`
   font-size: 1.2rem;
 	font-weight: 400;
-  color: #757171;
 `;
 const LinkIcon = styled(Link)`
   margin-left: 8px;
@@ -55,7 +58,7 @@ const ItemBottom = styled.div`
 const Author = styled.span`
   height: 16px;
   display: block;
-  background-color: #FF6B00;
+  background: ${({ theme }) => theme.activeColor};
   color: #fff;
   padding: 1px 9px;
   border-radius: 10px;

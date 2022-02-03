@@ -53,7 +53,7 @@ table {
 a:link,
 a { 
 	text-decoration: none;
-	color: #222;
+	color: #c0c0c0;
 }
 img {
   display: block;

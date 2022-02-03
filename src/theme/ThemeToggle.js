@@ -1,19 +1,23 @@
 import styled from '@emotion/styled';
-import { useContext } from 'react';
-import ThemeContext from '../context/ThemeContext';
-import { ReactComponent as DarkModBtn } from '../assets/darkmode.svg';
-import { darkTheme, lightTheme } from './theme';
+import { ReactComponent as DarkModeBtn } from '../assets/darkmode.svg';
 
 
-const ThemeToggleWrap = styled.span`
-  border: 1px solid red;
+const ThemeToggleWrap = styled.span``;
+
+const DarkMode = styled(DarkModeBtn)`
+  ellipse{
+    fill: ${({ theme }) => theme.fontColor};
+  }
+  path {
+	  stroke: ${({ theme }) => theme.fontColor};
+  }
 `;
 
-const ThemeToggle = () => {
-  const [theme, toggleTheme] = useContext(ThemeContext);
+const ThemeToggle = ({ toggle, mode }) => {
+
   return (
-    <ThemeToggleWrap onClick={toggleTheme}>
-      <DarkModBtn />
+    <ThemeToggleWrap >
+      <DarkMode onClick={toggle} mode={mode} />
     </ThemeToggleWrap >
   );
 };

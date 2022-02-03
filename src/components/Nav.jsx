@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { navis } from '../routes';
-import ThemeContext from '../context/ThemeContext';
 
 const NavWarp = styled.nav`
   width: 100%;
@@ -41,10 +40,9 @@ const NavLiItem = styled(NavLink)`
 
 
 const Nav = () => {
-  const [theme] = useContext(ThemeContext);
   return (
     <>
-      <NavWarp theme={theme}>
+      <NavWarp>
         <NavUl>
           {navis.map((navi) => (
             <NavLi key={navi.name}>

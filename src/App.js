@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import styled from '@emotion/styled';
 import { Routes, Route } from 'react-router-dom';
 import { Global } from '@emotion/react'
@@ -8,7 +7,7 @@ import { navis } from './routes';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
-import ThemeContext from './context/ThemeContext';
+import { ThemeModeProvider } from './context/ThemeContext';
 
 const Container = styled.div`
   width: 100%;
@@ -27,22 +26,22 @@ const Main = styled.main`
 `;
 
 function App() {
-  const [theme] = useContext(ThemeContext);
-
   return (
     <>
-      <Global styles={reset} />
-      <Container theme={theme}>
-        <Header />
-        <Main>
-          <Routes>
-            {navis.map((navi) => (
-              <Route key={navi.name} path={navi.path} element={navi.element} />
-            ))}
-          </Routes>
-        </Main>
-        <Nav />
-      </Container>
+      <ThemeModeProvider>
+        <Global styles={reset} />
+        <Container>
+          <Header />
+          <Main>
+            <Routes>
+              {navis.map((navi) => (
+                <Route key={navi.name} path={navi.path} element={navi.element} />
+              ))}
+            </Routes>
+          </Main>
+          <Nav />
+        </Container>
+      </ThemeModeProvider>
     </>
   );
 }
