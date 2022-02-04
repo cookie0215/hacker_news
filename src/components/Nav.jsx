@@ -7,6 +7,7 @@ const NavWarp = styled.nav`
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 10;
   border-top: 2px solid ${({ theme }) => theme.borderColor};
   background: ${({ theme }) => theme.bgColor};
 `;

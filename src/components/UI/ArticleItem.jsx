@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { ReactComponent as CommentIcon } from '../../assets/comment.svg';
 import { ReactComponent as Arrow } from '../../assets/arrow.svg'
-import { ReactComponent as Link } from '../../assets/linkIcon.svg'
+import { ReactComponent as Link } from '../../assets/linkIcon.svg';
 
 const ArticleItemWrap = styled.li`
   border-top: 1px solid #ECECEC;
@@ -91,31 +91,29 @@ const CommentUpdate = styled.span`
   }
 `;
 
-const ArticleItem = () => {
+const ArticleItem = ({ story: { id, by, title, kids, time, url } }) => {
   return (
-    <div>
-      <ArticleItemWrap>
-        <ItemTop>
-          <Lank>1</Lank>
-          <Title>Apple AirPods could soon identify you based on the shape of your ear</Title>
-          <ArrowIcon></ArrowIcon>
-        </ItemTop>
-        <ItemLink>
-          <ArticleLink href='#' target='_blank'>
-            ribbonhealth.com
-            <LinkIcon></LinkIcon>
-          </ArticleLink>
-        </ItemLink>
-        <ItemBottom>
-          <Author>kraenhansen</Author>
-          <CommentWrap>
-            <CommentIcon></CommentIcon>
-            <CommentCount>0</CommentCount>
-            <CommentUpdate>6 minutes ago</CommentUpdate>
-          </CommentWrap>
-        </ItemBottom>
-      </ArticleItemWrap>
-    </div>
+    <ArticleItemWrap>
+      <ItemTop>
+        <Lank>1</Lank>
+        <Title>{title}</Title>
+        <ArrowIcon></ArrowIcon>
+      </ItemTop>
+      <ItemLink>
+        <ArticleLink href={url} target='_blank' rel='noreferrer'>
+          {url}
+          <LinkIcon></LinkIcon>
+        </ArticleLink>
+      </ItemLink>
+      <ItemBottom>
+        <Author>{by}</Author>
+        <CommentWrap>
+          <CommentIcon></CommentIcon>
+          <CommentCount>0</CommentCount>
+          <CommentUpdate>6 minutes ago</CommentUpdate>
+        </CommentWrap>
+      </ItemBottom>
+    </ArticleItemWrap>
   );
 };
 

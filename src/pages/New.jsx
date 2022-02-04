@@ -1,8 +1,10 @@
 import React from 'react';
 import PageHeader from '../components/UI/PageHeader';
 import PageContents from '../components/UI/PageContents';
+import useAxios from '../hooks/useAxios';
 
-const New = () => {
+const New = ({ type }) => {
+  const stories = useAxios(type ? type : 'new');
   return (
     <>
       <PageHeader>
@@ -16,7 +18,7 @@ const New = () => {
           <span>Recent Post : a few seconds ago</span>
         </div>
       </PageHeader>
-      <PageContents>
+      <PageContents stories={stories}>
       </PageContents>
     </>
   );

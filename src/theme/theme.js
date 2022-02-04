@@ -14,7 +14,7 @@ export const darkTheme = {
   activeColor: "#FF6B00",
 }
 
-export const theme = {
+export const themeMode = {
   lightTheme,
   darkTheme
 }
