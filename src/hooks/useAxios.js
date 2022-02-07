@@ -6,7 +6,6 @@ const useAxios = (type) => {
 
   useEffect(() => {
     getStories(type).then((stories) => setStories(stories));
-    console.log(stories)
   }, [type]);
   return stories;
 };

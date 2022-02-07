@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
 import PageHeader from '../components/UI/PageHeader';
-import TopArticle from '../components/TopArticle';
-import NewArticle from '../components/NewArticle';
+import HomeTopArticle from '../components/HomeTopArticle';
+import HomeNewArticle from '../components/HomeNewArticle';
 
 const Wrap = styled.section`
   width: 100%;
   background: #F4F4F4;
   overflow: hidden;
 `;
+
+
 
 const Home = () => {
   return (
@@ -20,8 +22,8 @@ const Home = () => {
           </h1>
         </div>
       </PageHeader>
-      <TopArticle></TopArticle>
-      <NewArticle ></NewArticle>
+      <HomeTopArticle></HomeTopArticle>
+      <HomeNewArticle></HomeNewArticle>
     </Wrap>
   );
 };

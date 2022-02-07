@@ -11,6 +11,7 @@ import newsIcon from "./assets/new.svg";
 import showIcon from "./assets/show.svg";
 import askIcon from "./assets/ask.svg";
 import jobsIcon from "./assets/job.svg";
+import Detail from "./pages/Detail";
 
 export const navis = [
   { name: 'home', path: '/', element: <Home />, imgUrl: homeIcon },

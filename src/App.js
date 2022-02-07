@@ -4,26 +4,20 @@ import { Global } from '@emotion/react'
 import reset from './components/styles/Reset';
 import { Routes, Route } from 'react-router-dom';
 import { navis } from './routes';
-import Header from './components/Header';
+import CommonLayout from './components/UI/CommonLayout';
 import Nav from './components/Nav';
-// import Home from './pages/Home';
-// import Top from './pages/Top';
-// import New from './pages/New';
-// import Show from './pages/Show';
+import Detail from './pages/Detail';
 
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   background: ${({ theme }) => theme.bgColor};
   margin: 0 auto;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: relative;
-`;
-
-const Main = styled.main`
-  width: 100%;
-  padding-top: 56px;
-  padding-bottom: 78px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 function App() {
@@ -32,22 +26,19 @@ function App() {
       <ThemeModeProvider>
         <Global styles={reset} />
         <Container>
-          <Header />
-          <Main>
-            <Routes>
-              {navis.map((navi) => (
-                <Route key={navi.name} path={navi.path} element={navi.element} />
-              ))}
-              {/* <Route path='/' element={<Home />} />
-              <Route path='/top' element={<Top />} />
-              <Route path='/new' element={<New />} />
-              <Route path='/show' element={<Show />} /> */}
-
-            </Routes>
-          </Main>
+          <Routes>
+            {navis.map((navi) => (
+              <Route key={navi.name} path={navi.path} element={<CommonLayout>{navi.element}</CommonLayout>} />
+            ))}
+            <Route path="top/item/:id" element={<Detail />} />
+            <Route path="new/item/:id" element={<Detail />} />
+            <Route path="show/item/:id" element={<Detail />} />
+            <Route path="ask/item/:id" element={<Detail />} />
+            <Route path="job/item/:id" element={<Detail />} />
+          </Routes>
           <Nav />
         </Container>
-      </ThemeModeProvider>
+      </ThemeModeProvider >
     </>
   );
 }

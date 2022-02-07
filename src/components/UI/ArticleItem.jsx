@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { NavLink, useLocation } from 'react-router-dom';
 import { ReactComponent as CommentIcon } from '../../assets/comment.svg';
-import { ReactComponent as Arrow } from '../../assets/arrow.svg'
+import { ReactComponent as Arrow } from '../../assets/right_arrow.svg'
 import { ReactComponent as Link } from '../../assets/linkIcon.svg';
 
 const ArticleItemWrap = styled.li`
@@ -9,7 +10,7 @@ const ArticleItemWrap = styled.li`
   padding: 20px 15px 10px;
   margin: 0 15px;
 `;
-const ItemTop = styled.div`
+const ItemTop = styled(NavLink)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -43,6 +44,7 @@ const ItemLink = styled.div`
 const ArticleLink = styled.a`
   font-size: 1.2rem;
 	font-weight: 400;
+  color: ${({ theme }) => theme.linkColor};
 `;
 const LinkIcon = styled(Link)`
   margin-left: 8px;
@@ -91,28 +93,34 @@ const CommentUpdate = styled.span`
   }
 `;
 
-const ArticleItem = ({ story: { id, by, title, kids, time, url } }) => {
+
+const ArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
+  const { pathname } = useLocation();
   return (
     <ArticleItemWrap>
-      <ItemTop>
-        <Lank>1</Lank>
+      <ItemTop to={`item/${id}`}>
+        <Lank>{index + 1}</Lank>
         <Title>{title}</Title>
         <ArrowIcon></ArrowIcon>
       </ItemTop>
-      <ItemLink>
-        <ArticleLink href={url} target='_blank' rel='noreferrer'>
-          {url}
-          <LinkIcon></LinkIcon>
-        </ArticleLink>
-      </ItemLink>
-      <ItemBottom>
-        <Author>{by}</Author>
-        <CommentWrap>
-          <CommentIcon></CommentIcon>
-          <CommentCount>0</CommentCount>
-          <CommentUpdate>6 minutes ago</CommentUpdate>
-        </CommentWrap>
-      </ItemBottom>
+      {pathname.includes('ask') || !url ? null :
+        <ItemLink>
+          <ArticleLink href={url} target='_blank' rel='noreferrer'>
+            {url}
+            <LinkIcon></LinkIcon>
+          </ArticleLink>
+        </ItemLink>
+      }
+      {pathname.includes('show') || pathname.includes('ask') ?
+        <ItemBottom>
+          <Author>{by}</Author>
+          <CommentWrap>
+            <CommentIcon></CommentIcon>
+            <CommentCount>{kids !== undefined ? kids.length : '0'}</CommentCount>
+            <CommentUpdate>6 minutes ago</CommentUpdate>
+          </CommentWrap>
+        </ItemBottom>
+        : null}
     </ArticleItemWrap>
   );
 };

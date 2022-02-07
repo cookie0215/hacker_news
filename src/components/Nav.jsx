@@ -37,6 +37,11 @@ const NavLiItem = styled(NavLink)`
     margin-top: 8px;
     font-size: 0.8rem;
   }
+
+  &.active {
+    font-weight: 700;
+    color: ${({ theme }) => theme.activeColor};
+  }
 `;
 
 
@@ -47,7 +52,7 @@ const Nav = () => {
         <NavUl>
           {navis.map((navi) => (
             <NavLi key={navi.name}>
-              <NavLiItem to={navi.path}>
+              <NavLiItem to={navi.path} activeClassName='active'>
                 <img src={navi.imgUrl} alt={navi.name.toUpperCase()} />
                 <span>{navi.name.toUpperCase()}</span>
               </NavLiItem>
