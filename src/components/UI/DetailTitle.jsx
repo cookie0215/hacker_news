@@ -69,7 +69,7 @@ const DetailTitle = () => {
       </Top>
       <LinkWrap>
         <ArticleLink target='_blank' rel='noreferrer'>
-          {/* {url} */} webutils.app
+          webutils.app
           <LinkIcon />
         </ArticleLink>
       </LinkWrap>

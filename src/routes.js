@@ -5,19 +5,18 @@ import Show from "./pages/Show";
 import Ask from "./pages/Ask";
 import Job from "./pages/Job";
 
-import homeIcon from "./assets/home.svg";
-import topIcon from "./assets/top.svg";
-import newsIcon from "./assets/new.svg";
-import showIcon from "./assets/show.svg";
-import askIcon from "./assets/ask.svg";
-import jobsIcon from "./assets/job.svg";
-import Detail from "./pages/Detail";
+import { ReactComponent as HomeIcon } from "./assets/home.svg";
+import { ReactComponent as TopIcon } from "./assets/top.svg";
+import { ReactComponent as NewsIcon } from "./assets/new.svg";
+import { ReactComponent as ShowIcon } from "./assets/show.svg";
+import { ReactComponent as AskIcon } from "./assets/ask.svg";
+import { ReactComponent as JobsIcon } from "./assets/job.svg";
 
 export const navis = [
-  { name: 'home', path: '/', element: <Home />, imgUrl: homeIcon },
-  { name: 'top', path: '/top', element: <Top />, imgUrl: topIcon },
-  { name: 'new', path: '/new', element: <New />, imgUrl: newsIcon },
-  { name: 'show', path: '/show', element: <Show />, imgUrl: showIcon },
-  { name: 'ask', path: '/ask', element: <Ask />, imgUrl: askIcon },
-  { name: 'job', path: '/job', element: <Job />, imgUrl: jobsIcon }
+  { name: 'home', path: '/', element: <Home />, iconSvg: HomeIcon },
+  { name: 'top', path: '/top', element: <Top />, iconSvg: TopIcon },
+  { name: 'new', path: '/new', element: <New />, iconSvg: NewsIcon },
+  { name: 'show', path: '/show', element: <Show />, iconSvg: ShowIcon },
+  { name: 'ask', path: '/ask', element: <Ask />, iconSvg: AskIcon },
+  { name: 'job', path: '/job', element: <Job />, iconSvg: JobsIcon }
 ]

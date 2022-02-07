@@ -6,7 +6,6 @@ const Main = styled.main`
   width: 100%;
   padding-top: 56px;
   padding-bottom: 78px;
-  overflow: hidden;
 `;
 
 const CommonLayout = ({ children }) => {
