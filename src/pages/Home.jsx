@@ -5,7 +5,6 @@ import HomeNewArticle from '../components/HomeNewArticle';
 
 const Wrap = styled.section`
   width: 100%;
-  background: #F4F4F4;
   overflow: hidden;
 `;
 

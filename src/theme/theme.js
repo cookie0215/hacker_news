@@ -1,11 +1,12 @@
 export const lightTheme = {
-  bgColor: "#FFF",
+  bgColor: "#F4F4F4",
   fontColor: "#222",
   borderColor: "#ECECEC",
   linkColor: "#757171",
   navColor: "#444",
   activeColor: "#FF6B00",
   detailTopBgColor: "#FF6B00",
+  modalBgColor: "#fff",
 }
 
 export const darkTheme = {
@@ -16,6 +17,7 @@ export const darkTheme = {
   navColor: "#fff",
   activeColor: "#FF6B00",
   detailTopBgColor: "#444",
+  modalBgColor: "#444",
 }
 
 export const themeMode = {
