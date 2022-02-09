@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PageHeader from '../components/UI/PageHeader';
-import HomeTopArticle from '../components/HomeTopArticle';
-import HomeNewArticle from '../components/HomeNewArticle';
+import HomeTopArticle from '../components/Home/HomeTopArticle';
+import HomeNewArticle from '../components/Home/HomeNewArticle';
 
 const Wrap = styled.section`
   width: 100%;

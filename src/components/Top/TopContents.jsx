@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import TopArticleItem from './TopArticleItem';
-import { ReactComponent as MoreIcon } from '../assets/more.svg';
+import { ReactComponent as MoreIcon } from '../../assets/more.svg';
 
 
 const Wrap = styled.section`

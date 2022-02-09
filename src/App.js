@@ -7,6 +7,7 @@ import { navis } from './routes';
 import CommonLayout from './components/UI/CommonLayout';
 import Nav from './components/Nav';
 import Detail from './pages/Detail';
+import NotFound from './pages/NotFound';
 
 const Container = styled.div`
   width: 100%;
@@ -35,6 +36,7 @@ function App() {
             <Route path="show/item/:id" element={<Detail />} />
             <Route path="ask/item/:id" element={<Detail />} />
             <Route path="job/item/:id" element={<Detail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Nav />
         </Container>

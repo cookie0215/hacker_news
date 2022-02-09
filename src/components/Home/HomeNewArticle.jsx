@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import ContItem from './ContItem';
-import { ReactComponent as ArrowIcon } from '../assets/right_arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/right_arrow.svg';
 
 const Wrap = styled.article`
   padding-top: 12px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/UI/PageHeader';
-import TopContents from '../components/TopContents';
+import TopContents from '../components/Top/TopContents';
 import useAxios from '../hooks/useAxios';
 
 const Top = ({ type }) => {

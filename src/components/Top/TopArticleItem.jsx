@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as Arrow } from '../assets/right_arrow.svg';
-import { ReactComponent as Link } from '../assets/linkIcon.svg'
+import { ReactComponent as Arrow } from '../../assets/right_arrow.svg';
+import { ReactComponent as Link } from '../../assets/linkIcon.svg'
 
 const Article = styled.li`
   width: 100%;
