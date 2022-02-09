@@ -1,95 +1,69 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import useAxios from '../../hooks/useAxios';
+import HomeSlideItem from './HomeSlideItem';
 
 const Wrap = styled.article`
   padding-top: 28px;
   padding-bottom: 25px;
   padding-left: 18px;
-`;
-const Slides = styled.ul`
-  width: 500%;
-  display: flex;
-`;
-const SlideItem = styled.li`
-  width: 12%;
-  height: 182px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 27px 16px 32px;
-  display: flex;
-  flex-direction: column;
 
-  & + & {
-    margin-left: 16px;
+  .slick-dots {
+    width: auto;
+  }
+  .slick-dots li {
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+      margin-left: 6px;
+      margin-right: 0;
+  }
+  .slick-dots li button::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #C4C4C4;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+  .slick-dots li.slick-active {
+    width: 30px;
+    transition: width 0.3s ease-in-out;
+  }
+  .slick-dots li.slick-active button::before {
+    width: 30px;
+    border-radius: 8px;
+    background: #FF6B00;
   }
 `;
-const Author = styled.div`
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #FF6B00;
-  margin-bottom: 6px;
-`;
-const Title = styled.div`
-  flex-basis: 63px;
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-`;
-const Link = styled.div`
-  font-size: 0.9rem;
-  color: #BFBFBF;
-    margin-bottom: 5px;
-`;
-const Update = styled.div`
-  font-size: 0.9rem;
-  color: #BFBFBF;
-  margin-bottom: 5px;
-`;
 
-const IndiBtnGroup = styled.ul`
-  padding: 7px 0;
-  display: flex;
-`;
-const IndiItem = styled.li`
-display: flex;
-align-items: center;
-justify-content: center;
-  & + & {
-    margin-left: 4px;
-  }
-`;
-const IndiBtn = styled.button`
-  width: 12px;
-  height: 12px;
-  background: #c4c4c4;
-  border: none;
-  border-radius: 50%;
-`;
+const Slides = styled(Slider)`
+width: 100%;
+`
 
-
-
-const TopArticle = () => {
+const TopArticle = ({ type }) => {
+  const stories = useAxios(type);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows: false,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+  };
   return (
     <Wrap>
-      <Slides>
-        <SlideItem>
-          <Author>by peatmonster </Author>
-          <Title>Quantum Computer with 5K Qubits Launched </Title>
-          <Link>bleepingcomputer.com</Link>
-          <Update>8 hours ago</Update>
-        </SlideItem>
+      <Slides {...settings}>
+        {stories && stories.slice(0, 5).map(({ data: story }) =>
+          <HomeSlideItem key={story.id} story={story}></HomeSlideItem>
+        )}
       </Slides>
-
-      <IndiBtnGroup>
-        <IndiItem>
-          <IndiBtn></IndiBtn>
-        </IndiItem>
-        <IndiItem>
-          <IndiBtn></IndiBtn>
-        </IndiItem>
-      </IndiBtnGroup>
-    </Wrap>
+    </Wrap >
   );
 };
 
-export default TopArticle; 
+export default React.memo(TopArticle); 

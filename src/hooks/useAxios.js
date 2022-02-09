@@ -5,9 +5,7 @@ const useAxios = (type) => {
 
   useEffect(() => {
     getStories(type).then((stories) => setStories(stories));
-
-    // console.log(stories[0].data.kids)
-  }, [type]);
+  }, []);
   return stories;
 };
 

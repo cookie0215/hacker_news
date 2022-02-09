@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import ContItem from './ContItem';
@@ -13,6 +12,7 @@ const Title = styled.h2`
   font-weight: bold;
   font-size: 1.8rem;
   line-height: 2.4;
+  color: ${({ theme }) => theme.fontColor};
 `;
 
 const Slides = styled.ul`
@@ -26,6 +26,7 @@ const SlideItem = styled.li`
   padding: 9px 0;
   display: flex;
   flex-direction: column;
+  box-shadow: 1px 1px 5px ${({ theme }) => theme.shadowColor};
 
   & + & {
     margin-left: 30px;
@@ -47,7 +48,7 @@ const SlideContent = styled.div`
 `;
 
 
-const NewArticle = () => {
+const HomeEtcArticle = () => {
   return (
     <Wrap>
       <Title>Today’s New!</Title>
@@ -78,8 +79,8 @@ const NewArticle = () => {
           </SlideContent>
         </SlideItem>
       </Slides>
-    </Wrap >
+    </Wrap>
   );
 };
 
-export default NewArticle;
+export default HomeEtcArticle;

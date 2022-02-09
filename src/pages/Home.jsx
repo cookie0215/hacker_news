@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PageHeader from '../components/UI/PageHeader';
 import HomeTopArticle from '../components/Home/HomeTopArticle';
-import HomeNewArticle from '../components/Home/HomeNewArticle';
+import HomeEtcArticle from '../components/Home/HomeEtcArticle';
 
 const Wrap = styled.section`
   width: 100%;
@@ -13,16 +13,10 @@ const Wrap = styled.section`
 const Home = () => {
   return (
     <Wrap>
-      <PageHeader>
-        <div className='page_header_top'>
-          <h1>
-            Check out today's <br />
-            Popular Information
-          </h1>
-        </div>
+      <PageHeader title={["Check out today's", "Popular Information"]}>
       </PageHeader>
-      <HomeTopArticle></HomeTopArticle>
-      <HomeNewArticle></HomeNewArticle>
+      <HomeTopArticle type='top'></HomeTopArticle>
+      <HomeEtcArticle></HomeEtcArticle>
     </Wrap>
   );
 };

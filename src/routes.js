@@ -18,5 +18,5 @@ export const navis = [
   { name: 'new', path: '/new', element: <New />, iconSvg: NewsIcon },
   { name: 'show', path: '/show', element: <Show />, iconSvg: ShowIcon },
   { name: 'ask', path: '/ask', element: <Ask />, iconSvg: AskIcon },
-  { name: 'job', path: '/job', element: <Job />, iconSvg: JobsIcon },
+  { name: 'job', path: '/job', element: <Job />, iconSvg: JobsIcon }
 ]

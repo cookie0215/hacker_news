@@ -1,24 +1,13 @@
 import React from 'react';
 import PageHeader from '../components/UI/PageHeader';
 import PageContents from '../components/UI/PageContents';
-import useAxios from '../hooks/useAxios';
 
-const Ask = ({ type }) => {
-  const stories = useAxios(type ? type : 'ask');
+const Ask = () => {
   return (
     <>
-      <PageHeader>
-        <div className='page_header_top'>
-          <h1>
-            Check out<br />
-            hacker's work
-          </h1>
-        </div>
-        <div className='page_header_bottom'>
-          <span>Recent Post : a few seconds ago</span>
-        </div>
+      <PageHeader title={["Check out", "hacker's work"]}>
       </PageHeader>
-      <PageContents stories={stories}>
+      <PageContents type='ask'>
       </PageContents>
     </>
   );

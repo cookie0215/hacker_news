@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import TopArticleItem from './TopArticleItem';
 import { ReactComponent as MoreIcon } from '../../assets/more.svg';
+import useAxios from '../../hooks/useAxios'
 
 
 const Wrap = styled.section`
@@ -17,7 +18,8 @@ const MoreWrap = styled.div`
   align-items: center;
 `;
 
-const TopContents = ({ stories }) => {
+const TopContents = ({ type }) => {
+  const stories = useAxios(type);
   return (
     <Wrap>
       <Articles>
@@ -32,4 +34,4 @@ const TopContents = ({ stories }) => {
   );
 };
 
-export default TopContents;
+export default React.memo(TopContents);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as BackIcon } from '../../assets/left_arrow.svg';
 import { ReactComponent as ShareIcon } from '../../assets/shared.svg';
 import ModalPotal from '../Modal/ModalPotal';
@@ -34,11 +35,16 @@ const ShareBtn = styled(ShareIcon)``;
 
 const DetailHeader = () => {
   const [shareActive, setShareActive] = useState(false);
+  const navigate = useNavigate();
+
   const shareOpen = () => {
     setShareActive(true);
   }
   const shareClose = () => {
     setShareActive(false);
+  }
+  const goBack = () => {
+    navigate(-1);
   }
 
   return (
@@ -49,7 +55,7 @@ const DetailHeader = () => {
         }
       </ModalPotal>
       <HeaderWrap>
-        <IconWrap>
+        <IconWrap onClick={goBack}>
           <BackBtn />
         </IconWrap>
         <IconWrap onClick={shareOpen}>

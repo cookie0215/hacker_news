@@ -64,7 +64,7 @@ const ArticleBottom = styled.div`
 const Update = styled.span``;
 const Comments = styled.span``;
 
-const TopArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
+const TopArticleItem = ({ index, story: { id, by, title, kids, time, url, score } }) => {
   return (
     <>
       <Article>
@@ -82,7 +82,7 @@ const TopArticleItem = ({ index, story: { id, by, title, kids, time, url } }) =>
           </ItemLink>
         }
         <ArticleBottom>
-          <Update>1 points by melissalobos a few seconds ago </Update>
+          <Update>{score} points by {by} a few seconds ago </Update>
           <Comments>{kids !== undefined ? kids.length : '0'} comments</Comments>
         </ArticleBottom>
       </Article>
@@ -90,4 +90,4 @@ const TopArticleItem = ({ index, story: { id, by, title, kids, time, url } }) =>
   );
 };
 
-export default TopArticleItem;
+export default React.memo(TopArticleItem);

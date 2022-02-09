@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import ArticleItem from './ArticleItem';
 import { ReactComponent as MoreIcon } from '../../assets/more.svg';
+import useAxios from '../../hooks/useAxios';
 
 
 const PageContentsWrap = styled.div`
@@ -19,11 +20,14 @@ const MoreWrap = styled.div`
   align-items: center;
 `;
 
-const PageContents = ({ stories }) => {
+const PageContents = ({ type }) => {
+  const stories = useAxios(type);
   return (
     <PageContentsWrap>
       <ArticleList>
-        {stories && stories.map(({ data: story }, index) => story && <ArticleItem key={story.id} story={story} index={index} />)}
+        {stories && stories.map(({ data: story }, index) =>
+          story && <ArticleItem key={story.id} story={story} index={index} />
+        )}
       </ArticleList>
       <MoreWrap>
         <MoreIcon />
@@ -32,4 +36,4 @@ const PageContents = ({ stories }) => {
   );
 };
 
-export default PageContents;
+export default React.memo(PageContents);

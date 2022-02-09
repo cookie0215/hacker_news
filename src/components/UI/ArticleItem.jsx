@@ -125,4 +125,4 @@ const ArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
   );
 };
 
-export default ArticleItem;
+export default React.memo(ArticleItem);
