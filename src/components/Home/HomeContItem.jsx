@@ -31,17 +31,18 @@ const ArticleLink = styled.span`
   color: #BFBFBF;
 `;
 
-const ContItem = () => {
+const HomeContItem = ({ story: { title, url } }) => {
+
   return (
     <ContItemWrap>
       <Thumbnail></Thumbnail>
       <ArticleInfo>
-        <ArticleTitle>QProcoto (YC W21) Is Hiring Front End Engineers</ArticleTitle>
+        <ArticleTitle>{title}</ArticleTitle>
         <ArticleUpdate>a day ago</ArticleUpdate>
-        <ArticleLink>ycombinator.com</ArticleLink>
+        <ArticleLink>{url}</ArticleLink>
       </ArticleInfo>
     </ContItemWrap>
   );
 };
 
-export default ContItem;
+export default HomeContItem;

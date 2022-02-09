@@ -39,7 +39,7 @@ const Update = styled.div`
   margin-bottom: 5px;
 `;
 
-const HomeSlideItem = ({ story: { id, by, title, url, time } }) => {
+const HomeTopItem = ({ story: { id, by, title, url, time } }) => {
   return (
     <SlideItem>
       <Author>by {by} </Author>
@@ -50,4 +50,4 @@ const HomeSlideItem = ({ story: { id, by, title, url, time } }) => {
   );
 };
 
-export default React.memo(HomeSlideItem);
+export default React.memo(HomeTopItem);

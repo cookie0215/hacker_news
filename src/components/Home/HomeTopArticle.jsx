@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import useAxios from '../../hooks/useAxios';
-import HomeSlideItem from './HomeSlideItem';
+import HomeTopItem from './HomeTopItem';
 
 const Wrap = styled.article`
   padding-top: 28px;
@@ -50,16 +50,26 @@ const TopArticle = ({ type }) => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     speed: 500,
     arrows: false,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 2, slidesToScroll: 1
+        }
+      },
+    ]
   };
   return (
     <Wrap>
       <Slides {...settings}>
         {stories && stories.slice(0, 5).map(({ data: story }) =>
-          <HomeSlideItem key={story.id} story={story}></HomeSlideItem>
+          <HomeTopItem key={story.id} story={story}></HomeTopItem>
         )}
       </Slides>
     </Wrap >
