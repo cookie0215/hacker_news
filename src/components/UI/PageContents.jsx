@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import ArticleItem from './ArticleItem';
 import { ReactComponent as MoreIcon } from '../../assets/more.svg';
@@ -12,16 +12,25 @@ const PageContentsWrap = styled.div`
 const ArticleList = styled.ul`
   width: 100%;
 `;
-const MoreWrap = styled.div`
+const More = styled.div`
   width: 100%;
   padding: 26px 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  `;
+const MoreWrap = styled.span`
+  cursor: pointer;
 `;
+
 
 const PageContents = ({ type }) => {
   const stories = useAxios(type);
+  const [nextStories, setNextStoires] = useState(stories);
+
+  // const nextId = useRef(11);
+  const addArticle = () => {
+  }
   return (
     <PageContentsWrap>
       <ArticleList>
@@ -29,9 +38,11 @@ const PageContents = ({ type }) => {
           story && <ArticleItem key={story.id} story={story} index={index} />
         )}
       </ArticleList>
-      <MoreWrap>
-        <MoreIcon />
-      </MoreWrap>
+      <More>
+        <MoreWrap onClick={addArticle}>
+          <MoreIcon />
+        </MoreWrap>
+      </More>
     </PageContentsWrap>
   );
 };

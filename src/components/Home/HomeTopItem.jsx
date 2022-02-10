@@ -35,7 +35,7 @@ const ExUrl = styled.a`
 `;
 const Update = styled.div`
   font-size: 0.9rem;
-  color: #BFBFBF;
+  color: #9F9F9F;
   margin-bottom: 5px;
 `;
 

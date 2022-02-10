@@ -8,7 +8,7 @@ import HomeTopItem from './HomeTopItem';
 
 const Wrap = styled.article`
   padding-top: 28px;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
   padding-left: 18px;
 
   .slick-dots {

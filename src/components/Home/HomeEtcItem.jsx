@@ -36,7 +36,7 @@ const HomeEtcItem = ({ type, title }) => {
     <SlideItem>
       <SlideHeader>
         <SubTitle>{title}</SubTitle>
-        <Link to='/new'>
+        <Link to={`/${title}`}>
           <ArrowIcon width="10" height="20"></ArrowIcon>
         </Link>
       </SlideHeader>

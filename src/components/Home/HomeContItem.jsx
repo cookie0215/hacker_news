@@ -28,7 +28,7 @@ const ArticleUpdate = styled.span`
 `;
 const ArticleLink = styled.span`
   font-size: 0.9rem;
-  color: #BFBFBF;
+  color: #9F9F9F;
 `;
 
 const HomeContItem = ({ story: { title, url } }) => {

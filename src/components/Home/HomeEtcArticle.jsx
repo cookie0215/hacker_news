@@ -45,8 +45,8 @@ const HomeEtcArticle = () => {
       <Title>Today’s New!</Title>
       <Slides {...settings}>
         <HomeEtcItem title="New" type='new' />
-        <HomeEtcItem title="Ask" type='ask' />
         <HomeEtcItem title="Show" type='show' />
+        <HomeEtcItem title="Ask" type='ask' />
         <HomeEtcItem title="Job" type='job' />
       </Slides>
     </Wrap>

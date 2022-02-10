@@ -17,7 +17,7 @@ export const getStories = async (type) => {
 
 export const getUser = async (userId) => {
   const { data: userInfo } = await axios.get(`${userUrl}/${userId}.json`);
-  // console.log(userInfo)
+  console.log(userInfo)
   return userInfo;
 };
 
