@@ -51,7 +51,7 @@ const DetailHeader = () => {
     <>
       <ModalPotal>
         {shareActive &&
-          <Share shareActiveOn={shareActive} shareOpen={shareOpen} shareClose={shareClose} />
+          <Share shareClose={shareClose} />
         }
       </ModalPotal>
       <HeaderWrap>

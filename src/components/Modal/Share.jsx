@@ -91,7 +91,7 @@ const CopyBtn = styled.button`
   border: none;
 `;
 
-const Share = ({ shareActiveOn, shareOpen, shareClose }) => {
+const Share = ({ shareClose }) => {
   const icons = [
     { name: 'Facebook', iconShape: FacebookIcon },
     { name: 'Twitter', iconShape: TwitterIcon },

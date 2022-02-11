@@ -1,6 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { ReactComponent as Link } from '../../assets/linkIcon.svg';
+import ModalPotal from '../Modal/ModalPotal';
+import User from '../Modal/User';
 
 const TitleWrap = styled.div`
   width: 100%;
@@ -60,27 +62,42 @@ const Update = styled.span`
 `;
 
 const DetailTitle = () => {
+  const [userActive, setUserActive] = useState(false);
+  const userOpen = () => {
+    setUserActive(true);
+  }
+  const userClose = () => {
+    setUserActive(false);
+  }
+
   return (
-    <TitleWrap>
-      <Top>
-        <Title>
-          Show HN: Bulk convert images online without sending to server
-        </Title>
-      </Top>
-      <LinkWrap>
-        <ArticleLink target='_blank' rel='noreferrer'>
-          webutils.app
-          <LinkIcon />
-        </ArticleLink>
-      </LinkWrap>
-      <Bottom>
-        <AuthorInfo>
-          <Author>atum47</Author>
-          <Point>509 points</Point>
-        </AuthorInfo>
-        <Update>2 hours ago</Update>
-      </Bottom>
-    </TitleWrap>
+    <>
+      <ModalPotal>
+        {userActive &&
+          <User userClose={userClose} />
+        }
+      </ModalPotal>
+      <TitleWrap>
+        <Top>
+          <Title>
+            Show HN: Bulk convert images online without sending to server
+          </Title>
+        </Top>
+        <LinkWrap>
+          <ArticleLink target='_blank' rel='noreferrer'>
+            webutils.app
+            <LinkIcon />
+          </ArticleLink>
+        </LinkWrap>
+        <Bottom>
+          <AuthorInfo>
+            <Author onClick={userOpen}>atum47</Author>
+            <Point>509 points</Point>
+          </AuthorInfo>
+          <Update>2 hours ago</Update>
+        </Bottom>
+      </TitleWrap>
+    </>
   );
 };
 
