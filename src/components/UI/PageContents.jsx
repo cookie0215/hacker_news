@@ -26,9 +26,6 @@ const MoreWrap = styled.span`
 
 const PageContents = ({ type }) => {
   const stories = useAxios(type);
-  const [nextStories, setNextStoires] = useState(stories);
-
-  // const nextId = useRef(11);
   const addArticle = () => {
   }
   return (

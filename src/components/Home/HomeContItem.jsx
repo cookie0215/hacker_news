@@ -32,14 +32,14 @@ const ArticleLink = styled.span`
 `;
 
 const HomeContItem = ({ story: { title, url } }) => {
-
+  console.log()
   return (
     <ContItemWrap>
       <Thumbnail></Thumbnail>
       <ArticleInfo>
         <ArticleTitle>{title}</ArticleTitle>
         <ArticleUpdate>a day ago</ArticleUpdate>
-        <ArticleLink>{url}</ArticleLink>
+        <ArticleLink>{(url || '').split('/')[2]}</ArticleLink>
       </ArticleInfo>
     </ContItemWrap>
   );

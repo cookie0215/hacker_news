@@ -44,7 +44,7 @@ const HomeTopItem = ({ story: { id, by, title, url, time } }) => {
     <SlideItem>
       <Author>by {by} </Author>
       <MovePage to={`top/item/${id}`}><Title>{title} </Title></MovePage>
-      <ExUrl href={url} target='_blank' rel='noreferrer'>{url}</ExUrl>
+      <ExUrl href={url} target='_blank' rel='noreferrer'>{(url || '').split('/')[2]}</ExUrl>
       <Update>{time} hours ago</Update>
     </SlideItem>
   );

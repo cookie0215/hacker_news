@@ -6,7 +6,7 @@ const useUser = (id) => {
 
   useEffect(() => {
     getUser(id).then((user) => setUser(user));
-  }, []);
+  }, [id]);
 
   return user;
 };

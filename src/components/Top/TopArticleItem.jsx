@@ -76,7 +76,7 @@ const TopArticleItem = ({ index, story: { id, by, title, kids, time, url, score 
         {!url ? null :
           <ItemLink>
             <ArticleLink href={url} target='_blank' rel='noreferrer'>
-              {url}
+              {(url || '').split('/')[2]}
               <LinkIcon></LinkIcon>
             </ArticleLink>
           </ItemLink>

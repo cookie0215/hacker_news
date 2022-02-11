@@ -96,6 +96,7 @@ const CommentUpdate = styled.span`
 
 const ArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
   const { pathname } = useLocation();
+
   return (
     <ArticleItemWrap>
       <ItemTop to={`item/${id}`}>
@@ -106,7 +107,7 @@ const ArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
       {pathname.includes('ask') || !url ? null :
         <ItemLink>
           <ArticleLink href={url} target='_blank' rel='noreferrer'>
-            {url}
+            {(url || '').split('/')[2]}
             <LinkIcon></LinkIcon>
           </ArticleLink>
         </ItemLink>
@@ -117,7 +118,7 @@ const ArticleItem = ({ index, story: { id, by, title, kids, time, url } }) => {
           <CommentWrap>
             <CommentIcon></CommentIcon>
             <CommentCount>{kids !== undefined ? kids.length : '0'}</CommentCount>
-            <CommentUpdate>6 minutes ago</CommentUpdate>
+            <CommentUpdate>{time} minutes ago</CommentUpdate>
           </CommentWrap>
         </ItemBottom>
         : null}
